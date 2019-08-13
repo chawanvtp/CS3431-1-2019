@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="LightPurple">#b970e9</color>
+    <color name="YoungSalmon">#f5bbba</color>
+    <color name="RedOrange">#ff3838</color>
+    <color name="SpiroDiscoBall">#24c0eb</color>
+    <color name="DornYellow">#fdf251</color>
+    <color name="RadiantYellow">#fd9f1a</color>
+
+    <color name="WeirdGreen">#73e080</color>
+    <color name="BalticSea">#3d3d3d</color>
+    <color name="LightIndigo">#7158e2</color>
+    <color name="LightBrown">#986d60</color>
+    <color name="DepressedGreen">#578057</color>
+    <color name="SteelPink">#d549b5</color>
+
+</resources>

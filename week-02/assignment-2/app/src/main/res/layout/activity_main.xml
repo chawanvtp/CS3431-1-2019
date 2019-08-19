@@ -77,7 +77,7 @@
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintHorizontal_bias="0.777" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/btnRadiantYellow" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.714"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.633"
             android:background="@color/RedOrange"/>
     <Button
             android:layout_width="120dp"
@@ -115,7 +115,7 @@
             app:layout_constraintBottom_toTopOf="@+id/btnDornYellow" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" android:background="@color/YoungSalmon"
-            app:layout_constraintHorizontal_bias="0.501" app:layout_constraintVertical_bias="0.388"/>
+            app:layout_constraintHorizontal_bias="0.498" app:layout_constraintVertical_bias="0.444"/>
     <Button
             android:layout_width="120dp"
             android:layout_height="120dp"

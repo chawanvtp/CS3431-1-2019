@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <TextView
+            android:layout_width="149dp"
+            android:layout_height="58dp"
+            android:text="Ocean Life"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:textAlignment="center" android:textSize="30sp"
+            android:textColor="@color/colorPrimaryDark" app:layout_constraintVertical_bias="0.077"
+            android:id="@+id/textView2"/>
+    <ImageView
+            android:layout_width="175dp"
+            android:layout_height="115dp" app:srcCompat="@drawable/crab"
+            android:id="@+id/imageView" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" app:layout_constraintVertical_bias="0.325"/>
+    <ImageView
+            android:layout_width="175dp"
+            android:layout_height="115dp" app:srcCompat="@drawable/killer_whale"
+            android:id="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView" android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.275"
+            app:layout_constraintVertical_bias="0.325"/>
+    <ImageView
+            android:layout_width="175dp"
+            android:layout_height="115dp" app:srcCompat="@drawable/octopus"
+            android:id="@+id/imageView3" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"/>
+    <ImageView
+            android:layout_width="175dp"
+            android:layout_height="115dp" app:srcCompat="@drawable/sea_otter"
+            android:id="@+id/imageView4" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="24dp" app:layout_constraintVertical_bias="0.092"
+            app:layout_constraintStart_toEndOf="@+id/imageView6" android:layout_marginStart="8dp"
+            app:layout_constraintHorizontal_bias="0.615"/>
+    <ImageView
+            android:layout_width="175dp"
+            android:layout_height="115dp" app:srcCompat="@drawable/sea_turtle"
+            android:id="@+id/imageView5" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" app:layout_constraintStart_toEndOf="@+id/imageView3"
+            android:layout_marginStart="12dp"/>
+    <ImageView
+            android:layout_width="175dp"
+            android:layout_height="115dp" app:srcCompat="@drawable/shark"
+            android:id="@+id/imageView6" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" app:layout_constraintVertical_bias="0.099"/>
+    <TextView
+            android:text="Click picture to see detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView" android:layout_marginTop="48dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.497"/>
+
+</android.support.constraint.ConstraintLayout>

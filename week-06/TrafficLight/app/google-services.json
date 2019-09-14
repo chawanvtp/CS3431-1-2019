@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "244788140979",
+    "firebase_url": "https://cs3431-trafficlight.firebaseio.com",
+    "project_id": "cs3431-trafficlight",
+    "storage_bucket": "cs3431-trafficlight.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:244788140979:android:f116020d7368199acf89c6",
+        "android_client_info": {
+          "package_name": "chawan.cs3431.trafficlight"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "244788140979-fh4pgq2eipbqarvgm26eh12rcruooiqg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQQvUsyD3wIvD_vXBIrH4TPTasFMJMa9s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "244788140979-fh4pgq2eipbqarvgm26eh12rcruooiqg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

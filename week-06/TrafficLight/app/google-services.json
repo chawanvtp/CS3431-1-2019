@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:244788140979:android:f116020d7368199acf89c6",
+        "mobilesdk_app_id": "1:244788140979:android:6ade39390be8d691cf89c6",
         "android_client_info": {
           "package_name": "chawan.cs3431.trafficlight"
         }

@@ -28,12 +28,6 @@ import com.google.android.gms.maps.model.Marker
 import kotlinx.android.synthetic.main.activity_maps.*
 
 
-//        ----- SharedPreference -----
-//        var sharedPreference:SharedPreference = SharedPreference(this)
-//        sharedPreference.save("test","Chawan")
-//        Toast.makeText(this@MapsActivity,"Data Stored - ${sharedPreference.getValueString("test")}", Toast.LENGTH_SHORT).show()
-
-
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
@@ -46,13 +40,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     var animalsMarker = ArrayList<Marker>()
     lateinit var myMarker: Marker
     lateinit var  myMarkerOptions: MarkerOptions
-    var autoOn = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
         sharedPreference = SharedPreference(this)
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -61,9 +54,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         if(a !== null){
             animalLoaded = a
         }
-//        sharedPreference.clearSharedPreference()
         checkPermission()
-//        Log.d("Outer-animals.size : ","${animals.size}")
         loadAnimals()
 
         autoBtn.setOnClickListener {
@@ -71,22 +62,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
-        // Add a marker in Sydney and move the camera
-//        val sydney = LatLng(-34.0, 151.0)
-//        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 
     fun checkPermission() {
@@ -107,7 +84,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 getUserLocation()
             } else {
-// Show the toast say "We cannot access to your location"
+
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
@@ -131,9 +108,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
         override fun onLocationChanged(p0: Location?) {
             location = p0
-//            var latLong = LatLng(p0!!.latitude,p0!!.longitude)
-//            mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(latLong,14f))
-//            mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(latLong))
+
             runOnUiThread {
 
                 if(isClear) {
@@ -147,18 +122,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 myMarkerOptions = MarkerOptions().position(latLong).title("user name").snippet("Zhuoyu")
                     .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons(R.drawable.user,100,100)))
 
-//                mMap.addMarker(
-//                    MarkerOptions().position(latLong).title("user name").snippet("Zhuoyu")
-//                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.user)))
                 myMarker = mMap.addMarker(myMarkerOptions)
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLong, 0F))
 
                 var animalIndex = 0
                 for (animal in animals) {
 
-                        var latLong = LatLng(animal.lat, animal.long)
-//                        Log.d("RANDOM - ","$latLong")
-//                        if(animalLoaded < 49){
+                    var latLong = LatLng(animal.lat, animal.long)
                     if (!animal.isCatch) {
                         animalsMarker.add(
                             mMap.addMarker(
@@ -174,7 +144,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                             )
                         )
                     }
-//                        animalLoaded += 1 }
+
                         var animalLocation = Location("")
                         animalLocation.latitude = animal.lat
                         animalLocation.longitude = animal.long
@@ -205,14 +175,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun autoBtnClicked(){
-//        autoOn = !autoOn
-//        if(autoOn){
             autoWalk()
-//        }
-    }
-
-    fun resetAll(){
-
     }
 
     private fun loadAnimals() {
@@ -319,9 +282,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         animalLocation.latitude = animals[targetIndex].lat
         animalLocation.longitude = animals[targetIndex].long
 
-//        myMarker.position = latLong
-//            .title("user name").snippet("Zhuoyu")
-//            .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons(R.drawable.user,100,100)))
         mMap.addMarker(MarkerOptions().position(latLong).title("user name").snippet("Zhuoyu")
             .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons(R.drawable.user,30,30))))
 
@@ -331,9 +291,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             currentLoc!!.longitude = latLong!!.longitude
             setCurrentLocation(latLong)
             myMarker.position = latLong
-//                MarkerOptions().position(latLong)
-//                .title("user name").snippet("Zhuoyu-$x")
-//                .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons(R.drawable.user,100,100)))
+
             mMap.addMarker(MarkerOptions().position(latLong).title("user name").snippet("Zhuoyu")
                 .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons(R.drawable.user,30,30))))
 
@@ -345,11 +303,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 Toast.makeText(applicationContext,
                     "You catch the ${animals[targetIndex].name}-$targetIndex",Toast.LENGTH_LONG).show()
                 animalCatched += 1
-//                if(animalCatched < 10){
-//                if(autoOn){
-//                    return autoWalk()
-//                }
-//                return
+
                 sharedPreference.save("$targetIndex-animal-isCatch",true)
             }
 
@@ -372,7 +326,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             }
             curIndex += 1
         }
-//        Log.d("nearestIndex: ","$nearestIndex")
         return nearestIndex
     }
 
